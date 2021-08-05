@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LinkedLists;
+using System;
+using System.Collections.Generic;
 
 namespace DataStructure
 {
@@ -6,7 +8,9 @@ namespace DataStructure
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Data Structure and Algorithm.");
+            LinkedList linkedList = new LinkedList();
+            linkedList.Add(10);
+            linkedList.Display();
         }
     }
 }

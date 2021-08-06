@@ -6,12 +6,7 @@ namespace LinkedList
 {
     class LinkedList
     {
-        // variables
         internal Node head;
-        /// <summary>
-        /// add elements into linkedlist.
-        /// </summary>
-        /// <param name="data"></param>
         internal void Add(int data)
         {
             Node node = new Node(data);
@@ -29,9 +24,7 @@ namespace LinkedList
                 temp.next = node;
             }
         }
-        /// <summary>
-        /// display the elements of linkedlist.
-        /// </summary>
+       
         internal void Display()
         {
             Node temp = this.head;
@@ -47,18 +40,24 @@ namespace LinkedList
             }
             Console.Write("null \n");
         }
-        /// <summary>
-        /// remove the first element from linkedlist.
-        /// </summary>
-        /// <returns></returns>
-        internal Node Pop()
+       
+        internal Node PopLast()
         {
             if (this.head == null)
             {
                 return null;
             }
-            this.head = this.head.next;
-            return this.head;
+            if (head.next == null)
+            {
+                return null;
+            }
+            Node NewNode = head;
+            while (NewNode.next.next != null)
+            {
+                NewNode = NewNode.next;
+            }
+            NewNode.next = null;
+            return head;
         }
     }
 }

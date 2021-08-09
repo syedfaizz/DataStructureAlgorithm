@@ -1,14 +1,19 @@
-﻿using System;
+﻿
+using system;
 using System.Collections.Generic;
+
 using System.Text;
 
-namespace LinkedList
+namespace List
 {
     public class LinkedList
     {
-       
+        // variables
         internal Node head;
-       
+        /// <summary>
+        /// add elements into linkedlist.
+        /// </summary>
+        /// <param name="data"></param>
         internal void Add(int data)
         {
             Node node = new Node(data);
@@ -26,7 +31,9 @@ namespace LinkedList
                 temp.next = node;
             }
         }
-       
+        /// <summary>
+        /// display the elements of linkedlist.
+        /// </summary>
         internal void Display()
         {
             Node temp = this.head;
@@ -42,7 +49,10 @@ namespace LinkedList
             }
             Console.Write("null \n");
         }
-      
+        /// <summary>
+        /// add element into reverse order.
+        /// </summary>
+        /// <param name="data"></param>
         internal void AddElementInReverse(int data)
         {
             Node newNode = new Node(data);
@@ -57,7 +67,12 @@ namespace LinkedList
                 head.next = temp;
             }
         }
-      
+        /// <summary>
+        /// insert element at specified postion in linkedlist.
+        /// </summary>
+        /// <param name="position"></param>
+        /// <param name="data"></param>
+        /// <returns></returns>
         internal Node InsertAtParticularPosition(int position, int data)
         {
             Node newestNode = new Node(data);
@@ -84,7 +99,10 @@ namespace LinkedList
             prev.next = newestNode;
             return this.head;
         }
-       
+        /// <summary>
+        /// remove the first element from linkedlist.
+        /// </summary>
+        /// <returns></returns>
         internal Node Pop()
         {
             if (this.head == null)
@@ -94,7 +112,10 @@ namespace LinkedList
             this.head = this.head.next;
             return this.head;
         }
-        
+        /// <summary>
+        /// remove the last element from linkedlist.
+        /// </summary>
+        /// <returns></returns>
         internal Node PopLast()
         {
             if (this.head == null)
@@ -113,7 +134,11 @@ namespace LinkedList
             NewNode.next = null;
             return head;
         }
-       
+        /// <summary>
+        /// search element from linked list.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>count</returns>
         public int Search(int value)
         {
             Node node = this.head;
